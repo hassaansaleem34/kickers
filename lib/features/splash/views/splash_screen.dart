@@ -12,9 +12,8 @@ class splashscreen extends StatefulWidget {
   State<splashscreen> createState() => _splashscreenState();
 }
 
-
 class _splashscreenState extends State<splashscreen> {
-void initState() {
+  void initState() {
     // TODO: implement initState
     super.initState();
     Timer(Duration(seconds: 3), () {
@@ -33,6 +32,7 @@ void initState() {
         body: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            SizedBox(height: 300),
             //image
             Uihelper.CustomImagelogo(img: "Kicker.png"),
             //text
@@ -43,7 +43,7 @@ void initState() {
               fontsize: 12,
               fontfamily: "DM sans",
             ),
-            SizedBox(height: 100),
+            SizedBox(height: 200),
             Align(
               alignment: Alignment.bottomCenter,
               child: Uihelper.CustomImageproject(img: "klipartz 8.png"),

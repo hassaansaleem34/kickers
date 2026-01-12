@@ -18,11 +18,12 @@ class _loginscreenState extends State<loginscreen> {
       child: Scaffold(
         body: SafeArea(
           child: SingleChildScrollView(
-            padding: const EdgeInsets.only(top: 80, left: 20, right: 20),
+            padding: const EdgeInsets.only(top: 160, left: 20, right: 20),
             child: Column(
               children: [
-                Row(children: [Uihelper.CustomImagelogo(img: "Login.png")]),
                 SizedBox(height: 10),
+                Row(children: [Uihelper.CustomImagelogo(img: "Login.png")]),
+                SizedBox(height: 20),
                 Row(
                   children: [
                     Uihelper.Customtext(
@@ -111,9 +112,9 @@ class _loginscreenState extends State<loginscreen> {
                   ),
                 ),
 
-                SizedBox(height: 60),
+                SizedBox(height: 230),
                 Container(
-                  width: 400,
+                  width: 600,
                   height: 120,
 
                   decoration: BoxDecoration(

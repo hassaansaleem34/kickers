@@ -29,9 +29,12 @@ class mypurchase extends StatelessWidget {
               ],
             ),
           ),
+          SizedBox(height: 120),
           Uihelper.CustomImageproject(img: "klipartz 7.png"),
+          SizedBox(height: 10),
           Row(
             children: [
+              SizedBox(width: 10),
               Uihelper.Customtext(
                 text: "Nike Air Pegasus",
                 color: uicolors.primarybold,
@@ -42,19 +45,22 @@ class mypurchase extends StatelessWidget {
           ),
           Row(
             children: [
+              SizedBox(width: 10),
               Uihelper.Customtext(
-                text: "Nike Air Pegasus",
+                text:
+                    "Limited edition nike sneakers, \nmarketed in 2021 over 20+ countries globally",
                 color: uicolors.secondarygrey,
                 fontweight: FontWeight.normal,
                 fontsize: 12,
               ),
             ],
           ),
-          SizedBox(height: 10),
+          SizedBox(height: 15),
           Row(
             children: [
+              SizedBox(width: 10),
               Uihelper.CustomImageicon(img: "Community (1).png"),
-              Spacer(),
+              SizedBox(width: 180),
               Uihelper.CustomImageicon(img: "Stars (1).png"),
               Uihelper.Customtext(
                 text: "4.5",
@@ -64,9 +70,10 @@ class mypurchase extends StatelessWidget {
               ),
             ],
           ),
-          SizedBox(height: 10),
+          SizedBox(height: 15),
           Row(
             children: [
+              SizedBox(width: 10),
               Uihelper.Customtext(
                 text: "Colors available",
                 color: uicolors.primarybold,
@@ -75,45 +82,49 @@ class mypurchase extends StatelessWidget {
               ),
             ],
           ),
-          SizedBox(height: 10),
-          Row(
-            children: [
-              Uihelper.CustomImageicon(img: "Color Choice.png"),
-              Spacer(),
-              Uihelper.Customtext(
-                text: "200\u2079\u2079",
-                color: Color(0xffEB3C3C),
-                fontweight: FontWeight.bold,
-                fontsize: 17,
-              ),
-            ],
-          ),
-          SizedBox(height: 10),
-        ],
-      ),
-      bottomNavigationBar: Container(
-        height: 67,
-        width: 360,
-        decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(20),
-            topRight: Radius.circular(20),
-          ),
-        ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            SizedBox(height: 60),
-            Uihelper.Customtext(
-              text: "Add to Cart",
-              color: uicolors.primarybold,
-              fontweight: FontWeight.bold,
-              fontsize: 20,
+          SizedBox(height: 15),
+          Padding(
+            padding: const EdgeInsets.only(right: 30),
+            child: Row(
+              children: [
+                SizedBox(width: 10),
+                Uihelper.CustomImageicon(img: "Color Choice.png"),
+                Spacer(),
+                Uihelper.Customtext(
+                  text: "\$200",
+                  color: Color(0xffEB3C3C),
+                  fontweight: FontWeight.bold,
+                  fontsize: 17,
+                ),
+              ],
             ),
-            Uihelper.CustomImageicon(img: "Bag 2.png"),
-          ],
-        ),
+          ),
+          SizedBox(height: 120),
+          Container(
+            height: 67,
+            width: 360,
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(20),
+                topRight: Radius.circular(20),
+              ),
+            ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                // SizedBox(height: 40),
+                Uihelper.Customtext(
+                  text: "Add to Cart",
+                  color: uicolors.primarybold,
+                  fontweight: FontWeight.bold,
+                  fontsize: 20,
+                ),
+                Uihelper.CustomImageicon(img: "Bag 2.png"),
+              ],
+            ),
+          ),
+        ],
       ),
     );
   }

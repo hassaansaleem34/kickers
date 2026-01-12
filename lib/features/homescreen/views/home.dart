@@ -64,8 +64,8 @@ class _HomescreenState extends State<Homescreen> {
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
+                    SizedBox(width: 30),
                     Uihelper.Customtext(
                       text: "Explore",
                       color: uicolors.primarybold,
@@ -97,7 +97,7 @@ class _HomescreenState extends State<Homescreen> {
                 ),
               ),
 
-              const SizedBox(height: 10),
+              const SizedBox(height: 30),
 
               // ✅ GridView inside fixed height Container for proper scrolling
               LayoutBuilder(
@@ -111,9 +111,9 @@ class _HomescreenState extends State<Homescreen> {
                     gridDelegate:
                         const SliverGridDelegateWithFixedCrossAxisCount(
                           crossAxisCount: 2,
-                          crossAxisSpacing: 16,
-                          mainAxisSpacing: 16,
-                          childAspectRatio: 0.68,
+                          crossAxisSpacing: 12,
+                          mainAxisSpacing: 45,
+                          childAspectRatio: 0.78,
                         ),
                     itemBuilder: (context, index) {
                       final product = products[index];
@@ -131,7 +131,8 @@ class _HomescreenState extends State<Homescreen> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               // IMAGE
-                              Flexible(
+                              SizedBox(
+                                height: 120,
                                 child: Image.asset(
                                   product.image,
                                   fit: BoxFit.contain,

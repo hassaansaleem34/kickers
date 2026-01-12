@@ -18,9 +18,10 @@ class Uihelper {
     );
   }
 
-  static CustomImageicon({required String img, int? h, int? w}) {
+  static CustomImageicon({required String img, int? h, int? w, Color? color}) {
     return Image.asset(
       "assets/images/icon/$img",
+      color: color,
       height: h?.toDouble(),
       width: w?.toDouble(),
     );
@@ -78,13 +79,10 @@ class Uihelper {
         child: TextField(
           controller: controller,
           decoration: InputDecoration(
-            hintText: "  e.g Nike Air Jordans",
-            hintStyle: TextStyle(
-              color: Colors.grey, // 👈 hint text color
-              fontSize: 14,
-            ),
+            hintText: "e.g Nike Air Jordans",
+            hintStyle: TextStyle(color: Colors.grey, fontSize: 14),
             isDense: true, // 🔥 important
-            contentPadding: EdgeInsets.symmetric(vertical: 12),
+            contentPadding: EdgeInsets.fromLTRB(16, 12, 12, 12),
 
             suffixIcon: InkWell(
               onTap: () {

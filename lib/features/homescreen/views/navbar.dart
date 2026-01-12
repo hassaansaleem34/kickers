@@ -43,11 +43,17 @@ class _NavbarState extends State<Navbar> {
             },
             items: [
               BottomNavigationBarItem(
-                icon: Uihelper.CustomImageicon(img: "Home 2.png"),
+                icon: Uihelper.CustomImageicon(
+                  img: "Home 2.png",
+                  color: currentindex == 0 ? Colors.red : Colors.grey,
+                ),
                 label: "home",
               ),
               BottomNavigationBarItem(
-                icon: Uihelper.CustomImageicon(img: "Heart 1.png"),
+                icon: Uihelper.CustomImageicon(
+                  img: "Heart 1.png",
+                  color: currentindex == 1 ? Colors.red : Colors.grey,
+                ),
                 label: "notification",
               ),
 
@@ -55,11 +61,17 @@ class _NavbarState extends State<Navbar> {
               const BottomNavigationBarItem(icon: SizedBox.shrink(), label: ""),
 
               BottomNavigationBarItem(
-                icon: Uihelper.CustomImageicon(img: "Bag 1.png"),
+                icon: Uihelper.CustomImageicon(
+                  img: "Bag 1.png",
+                  color: currentindex == 3 ? Colors.red : Colors.grey,
+                ),
                 label: "likes",
               ),
               BottomNavigationBarItem(
-                icon: Uihelper.CustomImageicon(img: "Notification 1.png"),
+                icon: Uihelper.CustomImageicon(
+                  img: "Notification 1.png",
+                  color: currentindex == 4 ? Colors.red : Colors.grey,
+                ),
                 label: "cart",
               ),
             ],
