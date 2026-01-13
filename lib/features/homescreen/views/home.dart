@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:kickers/common/widgets/uihelper.dart';
-import 'package:kickers/features/homescreen/model/model.dart';
+import 'package:kickers/common/widgets/ui_helper.dart';
+import 'package:kickers/features/home_screen/model/model.dart';
 import 'package:kickers/utils/constants/colors.dart';
 
 class Homescreen extends StatefulWidget {
@@ -57,7 +57,7 @@ class _HomescreenState extends State<Homescreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Uihelper.customsearchbar(controller: search),
+              UiHelper.customSearchBar(controller: search),
               const SizedBox(height: 10),
 
               // ✅ Scrollable Row of options
@@ -66,28 +66,28 @@ class _HomescreenState extends State<Homescreen> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Uihelper.Customtext(
+                    UiHelper.customtext(
                       text: "Explore",
                       color: uicolors.primarybold,
                       fontweight: FontWeight.bold,
                       fontsize: 20,
                     ),
                     const SizedBox(width: 20),
-                    Uihelper.Customtext(
+                    UiHelper.customtext(
                       text: "Popular",
                       color: uicolors.secondarygrey,
                       fontweight: FontWeight.normal,
                       fontsize: 12,
                     ),
                     const SizedBox(width: 20),
-                    Uihelper.Customtext(
+                    UiHelper.customtext(
                       text: "Newest Deals",
                       color: uicolors.secondarygrey,
                       fontweight: FontWeight.normal,
                       fontsize: 12,
                     ),
                     const SizedBox(width: 20),
-                    Uihelper.Customtext(
+                    UiHelper.customtext(
                       text: "High ratings",
                       color: uicolors.secondarygrey,
                       fontweight: FontWeight.normal,
@@ -138,7 +138,7 @@ class _HomescreenState extends State<Homescreen> {
                                 ),
                               ),
                               const SizedBox(height: 8),
-                              Uihelper.Customtext(
+                              UiHelper.customtext(
                                 text: product.name,
                                 color: uicolors.primarybold,
                                 fontweight: FontWeight.w400,
@@ -159,7 +159,7 @@ class _HomescreenState extends State<Homescreen> {
                                         ),
                                       ),
                                       SizedBox(width: 60),
-                                      Uihelper.CustomImageproject(
+                                      UiHelper.customImageProject(
                                         img: "Community.png",
                                       ),
                                     ],
@@ -167,7 +167,7 @@ class _HomescreenState extends State<Homescreen> {
                                   Row(
                                     children: [
                                       SizedBox(width: 70),
-                                      Uihelper.Customtext(
+                                      UiHelper.customtext(
                                         text: "1.8K people bought this",
                                         color: uicolors.secondarygrey,
                                         fontweight: FontWeight.w700,

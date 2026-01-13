@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:kickers/features/purchase/views/purchase.dart';
-import 'package:kickers/features/splash/views/splash_screen.dart';
+import 'package:kickers/features/splash_screen/views/splash_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -34,7 +33,7 @@ class MyApp extends StatelessWidget {
         // tested with just a hot reload.
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: const splashscreen(),
+      home: const SplashScreen(),
     );
   }
 }
