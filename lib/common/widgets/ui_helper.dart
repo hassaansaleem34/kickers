@@ -93,7 +93,7 @@ class UiHelper {
               fontSize: 14,
             ),
             isDense: true, // 🔥 important
-            contentPadding: EdgeInsets.symmetric(vertical: 12),
+            contentPadding: EdgeInsets.symmetric(vertical: 12, horizontal: 20),
 
             enabledBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(9),
