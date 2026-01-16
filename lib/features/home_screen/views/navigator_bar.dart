@@ -46,16 +46,16 @@ class _NavbarState extends State<NavBar> {
             },
             items: [
               BottomNavigationBarItem(
-                icon: UiHelper.customImageIcon(
-                  img: "Home 2.png",
-                  color: currentindex == 0 ? Colors.red : Colors.grey,
+                icon: UiHelper.customImageSvg(
+                  img: "Home 2.svg",
+                  color: currentindex == 0 ? Colors.red : Color(0xff2D264B),
                 ),
                 label: "",
               ),
               BottomNavigationBarItem(
-                icon: UiHelper.customImageIcon(
-                  img: "Heart 1.png",
-                  color: currentindex == 1 ? Colors.red : Colors.grey,
+                icon: UiHelper.customImageSvg(
+                  img: "Heart 1.svg",
+                  color: currentindex == 1 ? Colors.red : Color(0xff2D264B),
                 ),
                 label: "",
               ),
@@ -64,16 +64,16 @@ class _NavbarState extends State<NavBar> {
               const BottomNavigationBarItem(icon: SizedBox.shrink(), label: ""),
 
               BottomNavigationBarItem(
-                icon: UiHelper.customImageIcon(
-                  img: "Bag 1.png",
-                  color: currentindex == 3 ? Colors.red : Colors.grey,
+                icon: UiHelper.customImageSvg(
+                  img: "Bag 1.svg",
+                  color: currentindex == 3 ? Colors.red : Color(0xff2D264B),
                 ),
                 label: "",
               ),
               BottomNavigationBarItem(
-                icon: UiHelper.customImageIcon(
-                  img: "Notification 1.png",
-                  color: currentindex == 4 ? Colors.red : Colors.grey,
+                icon: UiHelper.customImageSvg(
+                  img: "Notification 1.svg",
+                  color: currentindex == 4 ? Colors.red : Color(0xff2D264B),
                 ),
                 label: "",
               ),

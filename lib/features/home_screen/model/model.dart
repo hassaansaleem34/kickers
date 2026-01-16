@@ -3,13 +3,13 @@ class Product {
   final String image;
   final String price;
   final String people;
-  final String rating;
+   double rating;
 
   Product({
     required this.name,
     required this.image,
     required this.price,
     required this.people,
-    required this.rating,
+    this.rating =4.0
   });
 }

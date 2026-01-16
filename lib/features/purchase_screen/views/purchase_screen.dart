@@ -1,18 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:kickers/common/widgets/rating_show.dart';
 import 'package:kickers/common/widgets/ui_helper.dart';
 import 'package:kickers/features/home_screen/model/model.dart';
+import 'package:kickers/features/purchase_screen/views/colors_container.dart';
 import 'package:kickers/utils/constants/colors.dart';
 
-class mypurchase extends StatefulWidget {
+class MyPurchase extends StatefulWidget {
   final Product product;
 
-  const mypurchase({super.key, required this.product});
+  const MyPurchase({super.key, required this.product});
 
   @override
-  State<mypurchase> createState() => _mypurchaseState();
+  State<MyPurchase> createState() => _MyPurchaseState();
 }
 
-class _mypurchaseState extends State<mypurchase> {
+class _MyPurchaseState extends State<MyPurchase> {
+  Color? selectedColor;
+  Color? SelectedColor;
   @override
   Widget build(BuildContext context) {
     final product = widget.product;
@@ -28,13 +32,18 @@ class _mypurchaseState extends State<mypurchase> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 // Left Image
-                UiHelper.customImageIcon(img: "Left 2.png"),
+                InkWell(
+                  onTap: () {
+                    Navigator.pop(context);
+                  },
+                  child: UiHelper.customImageSvg(img: "Left 2.svg"),
+                ),
 
                 // Center Image (logo/title)
                 UiHelper.customImagelogo(img: "Purchase.png"),
 
                 // Right Image (profile/cart)
-                UiHelper.customImageIcon(img: "Bag 2.png"),
+                UiHelper.customImageSvg(img: "Bag 2.svg"),
               ],
             ),
           ),
@@ -87,13 +96,20 @@ class _mypurchaseState extends State<mypurchase> {
               children: [
                 SizedBox(width: 10),
                 UiHelper.customImageIcon(img: "Community (1).png"),
-                SizedBox(width: 180),
-                UiHelper.customImageIcon(img: "Stars (1).png"),
-                UiHelper.customtext(
-                  text: "4.5",
-                  color: uicolors.secondarygrey,
-                  fontweight: FontWeight.normal,
-                  fontsize: 10,
+                SizedBox(width: 130),
+                StarRatingWidget(
+                  rating: product.rating,
+                  starSize: 18,
+                  showRatingText: true,
+                  ratingTextStyle: TextStyle(
+                    fontSize: 15,
+                    color: uicolors.secondarygrey,
+
+                    fontWeight: FontWeight.bold,
+                  ),
+                  onRatingChanged: (r) {
+                    print("Rating: $r");
+                  },
                 ),
               ],
             ),
@@ -118,7 +134,23 @@ class _mypurchaseState extends State<mypurchase> {
               child: Row(
                 children: [
                   SizedBox(width: 10),
-                  UiHelper.customImageIcon(img: "Color Choice.png"),
+                  ColorSelector(
+                    colors: [
+                      Colors.red,
+                      Colors.yellow,
+                      Colors.blue,
+                      Colors.black,
+                    ],
+                    size: 20, // circle size
+                    spacing: 4, // space between circles
+                    onColorSelected: (color) {
+                      SelectedColor;
+                      setState(() {
+                        selectedColor = color; // 🔹 update state
+                        print("Selected color: $selectedColor");
+                      });
+                    },
+                  ),
                   Spacer(),
                   Text.rich(
                     TextSpan(
@@ -128,6 +160,7 @@ class _mypurchaseState extends State<mypurchase> {
                           style: const TextStyle(
                             color: Colors.red,
                             fontWeight: FontWeight.bold,
+                            fontSize: 17,
                           ),
                         ),
 
@@ -152,7 +185,7 @@ class _mypurchaseState extends State<mypurchase> {
               ),
             ),
           ),
-          SizedBox(height: 120),
+          SizedBox(height: 100),
           Container(
             height: 67,
             width: 360,

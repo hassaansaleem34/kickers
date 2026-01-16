@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:kickers/utils/constants/colors.dart';
 
 class UiHelper {
@@ -21,6 +22,15 @@ class UiHelper {
   static customImageIcon({required String img, int? h, int? w, Color? color}) {
     return Image.asset(
       "assets/images/icon/$img",
+      height: h?.toDouble(),
+      width: w?.toDouble(),
+      color: color,
+    );
+  }
+
+  static customImageSvg({required String img, int? h, int? w, Color? color}) {
+    return SvgPicture.asset(
+      "assets/images/svg/$img",
       height: h?.toDouble(),
       width: w?.toDouble(),
       color: color,
@@ -74,44 +84,54 @@ class UiHelper {
     );
   }
 
-  static customSearchBar({required TextEditingController controller}) {
-    return Center(
-      child: Container(
-        height: 38,
-        width: 360,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10),
-          color: Colors.white,
-          border: Border.all(color: Color(0xffC5C5C5)),
-        ),
-        child: TextField(
-          controller: controller,
-          decoration: InputDecoration(
-            hintText: "  e.g Nike Air Jordans",
-            hintStyle: TextStyle(
-              color: Colors.grey, // 👈 hint text color
-              fontSize: 14,
-            ),
-            isDense: true, // 🔥 important
-            contentPadding: EdgeInsets.symmetric(vertical: 12, horizontal: 20),
+  static customSearchBar({required TextEditingController controller, required FocusNode focusNode,}) {
+    return Padding(
+      padding: const EdgeInsets.only(left: 30, right: 30),
+      child: Center(
+        child: Container(
+          height: 38,
+          width: 360,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(10),
+            color: Colors.white,
+            border: Border.all(color: Color(0xffC5C5C5)),
+          ),
+          child: TextField(
+            autofocus: false,
+             focusNode: focusNode, // ✅ ADD THIS
+  
 
-            enabledBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(9),
-              borderSide: BorderSide(color: Colors.grey.shade300, width: 1),
-            ),
+            controller: controller,
+            decoration: InputDecoration(
+              hintText: "  e.g Nike Air Jordans",
+              hintStyle: TextStyle(
+                color: Colors.grey, // 👈 hint text color
+                fontSize: 14,
+              ),
+              isDense: true, // 🔥 important
+              contentPadding: EdgeInsets.symmetric(
+                vertical: 12,
+                horizontal: 16,
+              ),
 
-            focusedBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(9),
-              borderSide: BorderSide(color: Colors.black, width: 1.5),
-            ),
+              enabledBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(9),
+                borderSide: BorderSide(color: Colors.grey.shade300, width: 1),
+              ),
 
-            suffixIcon: InkWell(
-              onTap: () {
-                print("Mic clicked");
-              },
-              child: Padding(
-                padding: EdgeInsets.all(12),
-                child: UiHelper.customImageIcon(img: "Search 2.png"),
+              focusedBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(9),
+                borderSide: BorderSide(color: Colors.black, width: 1.5),
+              ),
+
+              suffixIcon: InkWell(
+                onTap: () {
+                  print("Mic clicked");
+                },
+                child: Padding(
+                  padding: EdgeInsets.all(12),
+                  child: UiHelper.customImageIcon(img: "Search 2.png"),
+                ),
               ),
             ),
           ),
